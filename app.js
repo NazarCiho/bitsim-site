@@ -6,9 +6,9 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Set the header color to match the bot's theme
     tg.setHeaderColor('#2196F3');
-    tg.backgroundColor= '#1b3115'
-    tg.headerColor = '#11874a'
-    tg.bottomBarColor = '#11874a'
+    tg.backgroundColor = '#1b3115';
+    tg.headerColor = '#11874a';
+    tg.bottomBarColor = '#11874a';
     // Get DOM elements
     const chatMessages = document.getElementById('chatMessages');
     const userInput = document.getElementById('userInput');
