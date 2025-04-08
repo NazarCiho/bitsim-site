@@ -1,5 +1,12 @@
 // Wait for DOM and module loading
 document.addEventListener('DOMContentLoaded', () => {
+    // Initialize Telegram WebApp
+    const tg = window.Telegram.WebApp;
+    tg.expand(); // Expand the WebApp to full height
+    
+    // Set the header color to match the bot's theme
+    tg.setHeaderColor('#2196F3');
+    
     // Get DOM elements
     const chatMessages = document.getElementById('chatMessages');
     const userInput = document.getElementById('userInput');
@@ -133,4 +140,13 @@ document.addEventListener('DOMContentLoaded', () => {
         userInput.style.height = 'auto';
         userInput.style.height = (userInput.scrollHeight) + 'px';
     });
+    
+    // Handle Telegram WebApp events
+    tg.onEvent('viewportChanged', () => {
+        // Adjust UI when viewport changes
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    });
+    
+    // Show the WebApp when it's ready
+    tg.ready();
 });
